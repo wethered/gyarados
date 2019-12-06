@@ -5,3 +5,9 @@
 <h4 align="center">
   <a href="https://fishshell.com" target="_blank"><code>Fish Shell</code></a> prompt for us.
 </h4>
+
+## To Install
+```bash
+omf install https://github.com/rTD-JP/gyarados
+omf theme gyarados
+```
