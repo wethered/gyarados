@@ -11,18 +11,18 @@ end
 
 test "Truncate path to 1 directory"
 	'temp3' = (
-		__sf_util_truncate_dir (pwd) 1
+		__gyarados_util_truncate_dir (pwd) 1
 	)
 end
 
 test "Truncate path to 3 directories"
 	'temp1/temp2/temp3' = (
-		__sf_util_truncate_dir (pwd) 3
+		__gyarados_util_truncate_dir (pwd) 3
 	)
 end
 
 test "Don't truncate path"
 	(pwd) = (
-		__sf_util_truncate_dir (pwd) 0
+		__gyarados_util_truncate_dir (pwd) 0
 	)
 end

@@ -1,19 +1,19 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 	mock go version 0 "echo \"go version go1.10.3 darwin/amd64\""
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+	mkdir -p /tmp/tmp-gyarados
+	cd /tmp/tmp-gyarados
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /tmp/tmp-gyarados
 end
 
 test "Prints section when Godeps is present"
 	(
-		mkdir /tmp/tmp-spacefish/Godeps
+		mkdir /tmp/tmp-gyarados/Godeps
 
 		set_color --bold
 		echo -n "via "
@@ -24,12 +24,12 @@ test "Prints section when Godeps is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Prints section when glide.yaml is present"
 	(
-		touch /tmp/tmp-spacefish/glide.yaml
+		touch /tmp/tmp-gyarados/glide.yaml
 
 		set_color --bold
 		echo -n "via "
@@ -40,12 +40,12 @@ test "Prints section when glide.yaml is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Prints section when Gopkg.yml is present"
 	(
-		touch /tmp/tmp-spacefish/Gopkg.yml
+		touch /tmp/tmp-gyarados/Gopkg.yml
 
 		set_color --bold
 		echo -n "via "
@@ -56,12 +56,12 @@ test "Prints section when Gopkg.yml is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Prints section when Gopkg.lock is present"
 	(
-		touch /tmp/tmp-spacefish/Gopkg.lock
+		touch /tmp/tmp-gyarados/Gopkg.lock
 
 		set_color --bold
 		echo -n "via "
@@ -72,12 +72,12 @@ test "Prints section when Gopkg.lock is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Prints section when go.mod is present"
 	(
-		touch /tmp/tmp-spacefish/go.mod
+		touch /tmp/tmp-gyarados/go.mod
 
 		set_color --bold
 		echo -n "via "
@@ -88,13 +88,13 @@ test "Prints section when go.mod is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Print section when using development version of golang"
 	(
 		mock go version 0 "echo go version devel +5efe9a8f11 Wed Jan 9 07:21:16 2019 +0000 darwin/amd64"
-		touch /tmp/tmp-spacefish/Gopkg.lock
+		touch /tmp/tmp-gyarados/Gopkg.lock
 
 		set_color --bold
 		echo -n "via "
@@ -105,17 +105,17 @@ test "Print section when using development version of golang"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
 test "Doesn't print the section when golang files aren't present"
-	() = (__sf_section_golang)
+	() = (__gyarados_section_golang)
 end
 
-test "Changing SPACEFISH_GOLANG_SYMBOL changes the displayed character"
+test "Changing GYARADOS_GOLANG_SYMBOL changes the displayed character"
 	(
-		touch /tmp/tmp-spacefish/Gopkg.lock
-		set SPACEFISH_GOLANG_SYMBOL "· "
+		touch /tmp/tmp-gyarados/Gopkg.lock
+		set GYARADOS_GOLANG_SYMBOL "· "
 
 		set_color --bold
 		echo -n "via "
@@ -126,14 +126,14 @@ test "Changing SPACEFISH_GOLANG_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
-test "Changing SPACEFISH_GOLANG_PREFIX changes the character prefix"
+test "Changing GYARADOS_GOLANG_PREFIX changes the character prefix"
 	(
-		touch /tmp/tmp-spacefish/Gopkg.lock
+		touch /tmp/tmp-gyarados/Gopkg.lock
 		set sf_exit_code 0
-		set SPACEFISH_GOLANG_PREFIX ·
+		set GYARADOS_GOLANG_PREFIX ·
 
 		set_color --bold
 		echo -n "·"
@@ -144,14 +144,14 @@ test "Changing SPACEFISH_GOLANG_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
-test "Changing SPACEFISH_GOLANG_SUFFIX changes the character suffix"
+test "Changing GYARADOS_GOLANG_SUFFIX changes the character suffix"
 	(
-		touch /tmp/tmp-spacefish/Gopkg.lock
+		touch /tmp/tmp-gyarados/Gopkg.lock
 		set sf_exit_code 0
-		set SPACEFISH_GOLANG_SUFFIX ·
+		set GYARADOS_GOLANG_SUFFIX ·
 
 		set_color --bold
 		echo -n "via "
@@ -162,12 +162,12 @@ test "Changing SPACEFISH_GOLANG_SUFFIX changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_golang)
+	) = (__gyarados_section_golang)
 end
 
-test "doesn't display the section when SPACEFISH_GOLANG_SHOW is set to \"false\""
+test "doesn't display the section when GYARADOS_GOLANG_SHOW is set to \"false\""
 	(
-		touch /tmp/tmp-spacefish/Gopkg.lock
-		set SPACEFISH_GOLANG_SHOW false
-	) = (__sf_section_golang)
+		touch /tmp/tmp-gyarados/Gopkg.lock
+		set GYARADOS_GOLANG_SHOW false
+	) = (__gyarados_section_golang)
 end

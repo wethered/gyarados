@@ -1,18 +1,18 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
-	mkdir -p ~/.tmp-spacefish/dir1/dir2
-	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
-	mkdir -p /tmp/tmp-spacefish/writeProtected
-	chmod 500 /tmp/tmp-spacefish/writeProtected
-	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
-	set SPACEFISH_DIR_LOCK_SHOW false
+	gyarados_test_setup
+	mkdir -p ~/.tmp-gyarados/dir1/dir2
+	mkdir -p /tmp/tmp-gyarados/dir1/dir2/dir3
+	mkdir -p /tmp/tmp-gyarados/writeProtected
+	chmod 500 /tmp/tmp-gyarados/writeProtected
+	# disabling GYARADOS_DIR_LOCK_SYMBOL to avoid breaking old tests
+	set GYARADOS_DIR_LOCK_SHOW false
 end
 
 function teardown
-	rm -rf ~/.tmp-spacefish
-	rm -rf /tmp/tmp-spacefish
+	rm -rf ~/.tmp-gyarados
+	rm -rf /tmp/tmp-gyarados
 end
 
 #
@@ -32,39 +32,39 @@ test "Correctly truncates home directory"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a home subdirectory"
 	(
-		cd ~/.tmp-spacefish/dir1/
+		cd ~/.tmp-gyarados/dir1/
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "~/.tmp-spacefish/dir1"
+		echo -n "~/.tmp-gyarados/dir1"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a deeply nested home subdirectory"
 	(
-		cd ~/.tmp-spacefish/dir1/dir2
+		cd ~/.tmp-gyarados/dir1/dir2
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n ".tmp-spacefish/dir1/dir2"
+		echo -n ".tmp-gyarados/dir1/dir2"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 #
@@ -84,7 +84,7 @@ test "Correctly truncates root directory"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a root subdirectory"
@@ -100,23 +100,23 @@ test "Correctly truncates a root subdirectory"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a deeply nested root subdirectory"
 	(
-		cd /tmp/tmp-spacefish/dir1/dir2
+		cd /tmp/tmp-gyarados/dir1/dir2
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp-spacefish/dir1/dir2"
+		echo -n "tmp-gyarados/dir1/dir2"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 #
@@ -125,44 +125,44 @@ end
 
 test "Correctly truncates the root of a git directory"
 	(
-		cd /tmp/tmp-spacefish
+		cd /tmp/tmp-gyarados
 		command git init >/dev/null
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp-spacefish"
+		echo -n "tmp-gyarados"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a git subdirectory"
 	(
-		cd /tmp/tmp-spacefish
+		cd /tmp/tmp-gyarados
 		command git init >/dev/null
-		cd /tmp/tmp-spacefish/dir1
+		cd /tmp/tmp-gyarados/dir1
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp-spacefish/dir1"
+		echo -n "tmp-gyarados/dir1"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates a deeply nested git subdirectory"
 	(
-		cd /tmp/tmp-spacefish
+		cd /tmp/tmp-gyarados
 		command git init >/dev/null
-		cd /tmp/tmp-spacefish/dir1/dir2/dir3
+		cd /tmp/tmp-gyarados/dir1/dir2/dir3
 
 		set_color --bold
 		echo -n "in "
@@ -173,15 +173,15 @@ test "Correctly truncates a deeply nested git subdirectory"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Correctly truncates the root of a git directory within another"
 	(
-		cd /tmp/tmp-spacefish
+		cd /tmp/tmp-gyarados
 		command git init >/dev/null
 
-		cd /tmp/tmp-spacefish/dir1
+		cd /tmp/tmp-gyarados/dir1
 		command git init >/dev/null
 
 		set_color --bold
@@ -193,40 +193,40 @@ test "Correctly truncates the root of a git directory within another"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Doesn't throw an error when in a .git directory"
 	(
-		cd /tmp/tmp-spacefish
+		cd /tmp/tmp-gyarados
 		command git init >/dev/null
 
-		cd /tmp/tmp-spacefish/.git
+		cd /tmp/tmp-gyarados/.git
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp/tmp-spacefish/.git"
+		echo -n "tmp/tmp-gyarados/.git"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 
 #
 # Configuration
 #
 
-test "Doesn't show if SPACEFISH_DIR_SHOW is false"
+test "Doesn't show if GYARADOS_DIR_SHOW is false"
 	(
-		set SPACEFISH_DIR_SHOW false
-	) = (__sf_section_dir)
+		set GYARADOS_DIR_SHOW false
+	) = (__gyarados_section_dir)
 end
 
-test "Changing SPACEFISH_DIR_PREFIX changes the dir prefix"
+test "Changing GYARADOS_DIR_PREFIX changes the dir prefix"
 	(
-		set SPACEFISH_DIR_PREFIX ·
+		set GYARADOS_DIR_PREFIX ·
 		cd ~
 
 		set_color --bold
@@ -238,12 +238,12 @@ test "Changing SPACEFISH_DIR_PREFIX changes the dir prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-test "Changing SPACEFISH_DIR_SUFFIX changes the dir prefix"
+test "Changing GYARADOS_DIR_SUFFIX changes the dir prefix"
 	(
-		set SPACEFISH_DIR_SUFFIX ·
+		set GYARADOS_DIR_SUFFIX ·
 		cd ~
 
 		set_color --bold
@@ -255,15 +255,15 @@ test "Changing SPACEFISH_DIR_SUFFIX changes the dir prefix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-# SPACEFISH_DIR_TRUNC functionality is further tested in:
-# __sf_util_truncate_dir.test.fish
-test "Changing SPACEFISH_DIR_TRUNC changes the dir length"
+# GYARADOS_DIR_TRUNC functionality is further tested in:
+# __gyarados_util_truncate_dir.test.fish
+test "Changing GYARADOS_DIR_TRUNC changes the dir length"
 	(
-		set SPACEFISH_DIR_TRUNC 1
-		cd /tmp/tmp-spacefish/dir1/dir2/dir3
+		set GYARADOS_DIR_TRUNC 1
+		cd /tmp/tmp-gyarados/dir1/dir2/dir3
 
 		set_color --bold
 		echo -n "in "
@@ -274,30 +274,30 @@ test "Changing SPACEFISH_DIR_TRUNC changes the dir length"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-test "Disabling SPACEFISH_DIR_TRUNC_REPO stops repo dir truncation"
+test "Disabling GYARADOS_DIR_TRUNC_REPO stops repo dir truncation"
 	(
-		set SPACEFISH_DIR_TRUNC_REPO false
-		cd ~/.tmp-spacefish
+		set GYARADOS_DIR_TRUNC_REPO false
+		cd ~/.tmp-gyarados
 		command git init >/dev/null
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "~/.tmp-spacefish"
+		echo -n "~/.tmp-gyarados"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-test "Changing SPACEFISH_DIR_COLOR changes the dir color"
+test "Changing GYARADOS_DIR_COLOR changes the dir color"
 	(
-		set SPACEFISH_DIR_COLOR red
+		set GYARADOS_DIR_COLOR red
 		cd ~
 
 		set_color --bold
@@ -309,44 +309,44 @@ test "Changing SPACEFISH_DIR_COLOR changes the dir color"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 
 #
-# SPACEFISH_DIR_LOCK_SYMBOL
+# GYARADOS_DIR_LOCK_SYMBOL
 #
 
-test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SHOW is true"
+test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and GYARADOS_DIR_LOCK_SHOW is true"
 	(
-		cd /tmp/tmp-spacefish/writeProtected
+		cd /tmp/tmp-gyarados/writeProtected
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp/tmp-spacefish/writeProtected"
+		echo -n "tmp/tmp-gyarados/writeProtected"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-test "Doesn't show DIR_LOCK_SYMBOL if SPACEFISH_DIR_LOCK_SHOW is false"
+test "Doesn't show DIR_LOCK_SYMBOL if GYARADOS_DIR_LOCK_SHOW is false"
 	(
-		cd /tmp/tmp-spacefish/writeProtected
+		cd /tmp/tmp-gyarados/writeProtected
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp/tmp-spacefish/writeProtected"
+		echo -n "tmp/tmp-gyarados/writeProtected"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
 test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected for this user"
@@ -362,22 +362,22 @@ test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected f
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end
 
-test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
+test "Changing GYARADOS_DIR_LOCK_SYMBOL changes the symbol"
 	(
-		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
-		cd /tmp/tmp-spacefish/writeProtected
+		set GYARADOS_DIR_LOCK_SYMBOL "😀"
+		cd /tmp/tmp-gyarados/writeProtected
 
 		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "tmp/tmp-spacefish/writeProtected"
+		echo -n "tmp/tmp-gyarados/writeProtected"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
+	) = (__gyarados_section_dir)
 end

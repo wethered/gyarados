@@ -2,14 +2,14 @@
 
 set -l gitRoot (git rev-parse --show-toplevel)
 set -l testDir (dirname (status --current-filename))
-set -l tmpDir /tmp/spacefish
+set -l tmpDir /tmp/gyarados
 
 # Install fisher if not installed in temporary fish env
 if test ! -f $tmpDir/.config/fish/functions/fisher.fish
 	curl https://git.io/fisher --create-dirs -sLo $tmpDir/.config/fish/functions/fisher.fish
 end
 
-# Install fishtape and local spacefish into temp env
+# Install fishtape and local gyarados into temp env
 env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape@7426171 matchai/fish-mock $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
 

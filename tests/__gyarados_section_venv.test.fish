@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 end
 
 function teardown
@@ -15,15 +15,15 @@ test "Prints section when \$VIRTUAL_ENV is defined"
 		set VIRTUAL_ENV "/Users/JaneDoe/.venv/coolenviron"
 
 		set_color --bold
-		echo -n $SPACEFISH_PROMPT_DEFAULT_PREFIX
+		echo -n $GYARADOS_PROMPT_DEFAULT_PREFIX
 		set_color normal
 		set_color --bold blue
 		echo -n "·coolenviron"
 		set_color normal
 		set_color --bold
-		echo -n $SPACEFISH_PROMPT_DEFAULT_SUFFIX
+		echo -n $GYARADOS_PROMPT_DEFAULT_SUFFIX
 		set_color normal
-	) = (__sf_section_venv)
+	) = (__gyarados_section_venv)
 end
 
 test "Prints section when \$VIRTUAL_ENV is defined with venv as the directory name"
@@ -31,20 +31,20 @@ test "Prints section when \$VIRTUAL_ENV is defined with venv as the directory na
 		set VIRTUAL_ENV "/Users/JaneDoe/.venv/coolenviron/virtualenv"
 
 		set_color --bold
-		echo -n $SPACEFISH_PROMPT_DEFAULT_PREFIX
+		echo -n $GYARADOS_PROMPT_DEFAULT_PREFIX
 		set_color normal
 		set_color --bold blue
 		echo -n "·coolenviron"
 		set_color normal
 		set_color --bold
-		echo -n $SPACEFISH_PROMPT_DEFAULT_SUFFIX
+		echo -n $GYARADOS_PROMPT_DEFAULT_SUFFIX
 		set_color normal
-	) = (__sf_section_venv)
+	) = (__gyarados_section_venv)
 end
 
-test "doesn't display the section when SPACEFISH_VENV_SHOW is set to \"false\""
+test "doesn't display the section when GYARADOS_VENV_SHOW is set to \"false\""
 	(
 		set VIRTUAL_ENV "/Users/JaneDoe/.venv/coolenviron"
-		set SPACEFISH_VENV_SHOW false
-	) = (__sf_section_venv)
+		set GYARADOS_VENV_SHOW false
+	) = (__gyarados_section_venv)
 end

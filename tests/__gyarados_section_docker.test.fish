@@ -1,15 +1,15 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 	mock docker version 0 "echo \"18.06.1\""
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+	mkdir -p /tmp/tmp-gyarados
+	cd /tmp/tmp-gyarados
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /tmp/tmp-gyarados
 	if test "$COMPOSE_FILE"
 		set -e COMPOSE_FILE
 	end
@@ -31,7 +31,7 @@ test "Prints section when only Dockerfile is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints section when only docker-compose.yml is present"
@@ -47,7 +47,7 @@ test "Prints section when only docker-compose.yml is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints section when both Dockerfile and docker-compose.yml are present"
@@ -64,7 +64,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints Docker section when COMPOSE_FILE is set and the $COMPOSE_FILE exists"
@@ -81,7 +81,7 @@ test "Prints Docker section when COMPOSE_FILE is set and the $COMPOSE_FILE exist
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints section when only Dockerfile is present with DOCKER_MACHINE_NAME set"
@@ -99,7 +99,7 @@ test "Prints section when only Dockerfile is present with DOCKER_MACHINE_NAME se
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints section when only docker-compose.yml is present with DOCKER_MACHINE_NAME set"
@@ -116,7 +116,7 @@ test "Prints section when only docker-compose.yml is present with DOCKER_MACHINE
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints section when both Dockerfile and docker-compose.yml are present with DOCKER_MACHINE_NAME set"
@@ -134,7 +134,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present wit
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME set"
@@ -152,13 +152,13 @@ test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME se
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
-test "Changing SPACEFISH_DOCKER_SYMBOL changes the displayed character"
+test "Changing GYARADOS_DOCKER_SYMBOL changes the displayed character"
 	(
 		rm /tmp/some-compose-file.yml
-		set SPACEFISH_DOCKER_SYMBOL "· "
+		set GYARADOS_DOCKER_SYMBOL "· "
 		touch Dockerfile
 
 		set_color --bold
@@ -170,13 +170,13 @@ test "Changing SPACEFISH_DOCKER_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
-test "Changing SPACEFISH_DOCKER_PREFIX changes the character prefix"
+test "Changing GYARADOS_DOCKER_PREFIX changes the character prefix"
 	(
 		set sf_exit_code 0
-		set SPACEFISH_DOCKER_PREFIX ·
+		set GYARADOS_DOCKER_PREFIX ·
 		touch Dockerfile
 
 		set_color --bold
@@ -188,31 +188,31 @@ test "Changing SPACEFISH_DOCKER_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 
 # Negative
-test "Doesn't display section when SPACEFISH_DOCKER_SHOW is set to 'false'"
+test "Doesn't display section when GYARADOS_DOCKER_SHOW is set to 'false'"
 	(
-		set SPACEFISH_DOCKER_SHOW false
+		set GYARADOS_DOCKER_SHOW false
 		touch Dockerfile
 
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 test "Doesn't print section if docker is not installed"
 	(
 		touch Dockerfile
 		mock docker version 127
-	) = (__sf_section_docker)
+	) = (__gyarados_section_docker)
 end
 
 # This case can be checked only by bringing down the docker deamon
 test "Doesn't print section if docker deamon is not running"
-		() = (__sf_section_docker)
+		() = (__gyarados_section_docker)
 end
 
 test "Doesn't print section when not in a directory with Dockerfile or docker-compose.yml"
-	() = (__sf_section_docker)
+	() = (__gyarados_section_docker)
 end

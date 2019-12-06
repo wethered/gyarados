@@ -1,20 +1,20 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+	gyarados_test_setup
+	mkdir -p /tmp/tmp-gyarados
+	cd /tmp/tmp-gyarados
 	command git init >/dev/null
 	command git config --local user.email "test@example.com"
 	command git config --local user.name "Test User"
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /tmp/tmp-gyarados
 end
 
 test "Displays no status symbols in a clean repo"
-	() = (__sf_section_git_status)
+	() = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for untracked file"
@@ -28,7 +28,7 @@ test "Displays the correct symbol for untracked file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for added file"
@@ -43,7 +43,7 @@ test "Displays the correct symbol for added file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for modified file"
@@ -60,7 +60,7 @@ test "Displays the correct symbol for modified file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for renamed file"
@@ -78,7 +78,7 @@ test "Displays the correct symbol for renamed file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for deleted file"
@@ -96,7 +96,7 @@ test "Displays the correct symbol for deleted file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
 test "Displays the correct symbol for stashed file"
@@ -114,13 +114,13 @@ test "Displays the correct symbol for stashed file"
 		set_color normal
 		set_color --bold
 		set_color normal
-	) = (__sf_section_git_status)
+	) = (__gyarados_section_git_status)
 end
 
-test "Test config option SPACEFISH_GIT_STATUS_SHOW"
+test "Test config option GYARADOS_GIT_STATUS_SHOW"
 	(
-		set -g SPACEFISH_GIT_STATUS_SHOW false
-	) = (__sf_section_git_status)
+		set -g GYARADOS_GIT_STATUS_SHOW false
+	) = (__gyarados_section_git_status)
 end
 
 # TODO: Get test dir into status *U*

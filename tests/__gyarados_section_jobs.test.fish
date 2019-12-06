@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 end
 
 function teardown
@@ -20,7 +20,7 @@ test "Test a single background job"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end
 
 test "Test with two background jobs"
@@ -36,7 +36,7 @@ test "Test with two background jobs"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end
 
 test "Test with five background jobs"
@@ -55,12 +55,12 @@ test "Test with five background jobs"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end
 
 test "Test with less than threshold of background jobs"
 	(
-		set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
+		set GYARADOS_JOBS_AMOUNT_THRESHOLD 4
 
 		sleep 5 & # Background process #1
 		sleep 5 & # Background process #2
@@ -74,12 +74,12 @@ test "Test with less than threshold of background jobs"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end
 
 test "Test with equal threshold of background jobs"
 	(
-		set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
+		set GYARADOS_JOBS_AMOUNT_THRESHOLD 4
 
 		sleep 5 & # Background process #1
 		sleep 5 & # Background process #2
@@ -94,12 +94,12 @@ test "Test with equal threshold of background jobs"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end
 
 test "Test with more than threshold of background jobs"
 	(
-		set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
+		set GYARADOS_JOBS_AMOUNT_THRESHOLD 4
 
 		sleep 5 & # Background process #1
 		sleep 5 & # Background process #2
@@ -116,5 +116,5 @@ test "Test with more than threshold of background jobs"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_jobs)
+	) = (__gyarados_section_jobs)
 end

@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 
 	function date -a time_format
 		command date --version >/dev/null 2>/dev/null
@@ -19,12 +19,12 @@ function teardown
 end
 
 test "Time is disabled by default?"
-	() = (__sf_section_time)
+	() = (__gyarados_section_time)
 end
 
 test "Enabling time! 24-hour by default"
 	(
-		set SPACEFISH_TIME_SHOW true
+		set GYARADOS_TIME_SHOW true
 
 		set_color --bold
 		echo -n "at "
@@ -35,13 +35,13 @@ test "Enabling time! 24-hour by default"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
+	) = (__gyarados_section_time)
 end
 
 test "Enabling time with 12-hour instead"
 	(
-		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_12HR true
+		set GYARADOS_TIME_SHOW true
+		set GYARADOS_TIME_12HR true
 
 		set_color --bold
 		echo -n "at "
@@ -52,13 +52,13 @@ test "Enabling time with 12-hour instead"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
+	) = (__gyarados_section_time)
 end
 
 test "Show the date too"
 	(
-		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_DATE_SHOW true
+		set GYARADOS_TIME_SHOW true
+		set GYARADOS_DATE_SHOW true
 
 		set_color --bold
 		echo -n "at "
@@ -71,14 +71,14 @@ test "Show the date too"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
+	) = (__gyarados_section_time)
 end
 
 test "Custom date/time format"
 	(
-		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_FORMAT (date '+%H') # Unix timestamp
-		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
+		set GYARADOS_TIME_SHOW true
+		set GYARADOS_TIME_FORMAT (date '+%H') # Unix timestamp
+		set GYARADOS_TIME_PREFIX "" # Get rid of "at " prefix.
 
 		set_color --bold
 		set_color normal
@@ -88,13 +88,13 @@ test "Custom date/time format"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
+	) = (__gyarados_section_time)
 end
 
 test "What is the time? Purple?!"
 	(
-		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_COLOR purple
+		set GYARADOS_TIME_SHOW true
+		set GYARADOS_TIME_COLOR purple
 
 		set_color --bold
 		echo -n "at "
@@ -105,5 +105,5 @@ test "What is the time? Purple?!"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
+	) = (__gyarados_section_time)
 end

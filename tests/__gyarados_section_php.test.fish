@@ -1,21 +1,21 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 	mock php -v 0 "echo \"PHP 7.1.16 (cli) (built: Mar 31 2018 02:59:59) ( NTS )
 	Copyright (c) 1997-2018 The PHP Group
 	Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies\""
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+	mkdir -p /tmp/tmp-gyarados
+	cd /tmp/tmp-gyarados
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /tmp/tmp-gyarados
 end
 
 test "Prints section when composer.json is present"
 	(
-		touch /tmp/tmp-spacefish/composer.json
+		touch /tmp/tmp-gyarados/composer.json
 
 		set_color --bold
 		echo -n "via "
@@ -26,12 +26,12 @@ test "Prints section when composer.json is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_php)
+	) = (__gyarados_section_php)
 end
 
 test "Prints section when a *.php file is present"
 	(
-		touch /tmp/tmp-spacefish/testfile.php
+		touch /tmp/tmp-gyarados/testfile.php
 
 		set_color --bold
 		echo -n "via "
@@ -42,17 +42,17 @@ test "Prints section when a *.php file is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_php)
+	) = (__gyarados_section_php)
 end
 
 test "Doesn't print the section when composer.json and *.php aren't present"
-	() = (__sf_section_php)
+	() = (__gyarados_section_php)
 end
 
-test "Changing SPACEFISH_PHP_SYMBOL changes the displayed character"
+test "Changing GYARADOS_PHP_SYMBOL changes the displayed character"
 	(
-		touch /tmp/tmp-spacefish/composer.json
-		set SPACEFISH_PHP_SYMBOL "· "
+		touch /tmp/tmp-gyarados/composer.json
+		set GYARADOS_PHP_SYMBOL "· "
 
 		set_color --bold
 		echo -n "via "
@@ -63,14 +63,14 @@ test "Changing SPACEFISH_PHP_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_php)
+	) = (__gyarados_section_php)
 end
 
-test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
+test "Changing GYARADOS_PHP_PREFIX changes the character prefix"
 	(
-		touch /tmp/tmp-spacefish/composer.json
+		touch /tmp/tmp-gyarados/composer.json
 		set sf_exit_code 0
-		set SPACEFISH_PHP_PREFIX ·
+		set GYARADOS_PHP_PREFIX ·
 
 		set_color --bold
 		echo -n "·"
@@ -81,14 +81,14 @@ test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_php)
+	) = (__gyarados_section_php)
 end
 
-test "Changing SPACEFISH_PHP_SUFFIX changes the character suffix"
+test "Changing GYARADOS_PHP_SUFFIX changes the character suffix"
 	(
-		touch /tmp/tmp-spacefish/composer.json
+		touch /tmp/tmp-gyarados/composer.json
 		set sf_exit_code 0
-		set SPACEFISH_PHP_SUFFIX ·
+		set GYARADOS_PHP_SUFFIX ·
 
 		set_color --bold
 		echo -n "via "
@@ -99,12 +99,12 @@ test "Changing SPACEFISH_PHP_SUFFIX changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_php)
+	) = (__gyarados_section_php)
 end
 
-test "doesn't display the section when SPACEFISH_PHP_SHOW is set to \"false\""
+test "doesn't display the section when GYARADOS_PHP_SHOW is set to \"false\""
 	(
-		touch /tmp/tmp-spacefish/composer.json
-		set SPACEFISH_PHP_SHOW false
-	) = (__sf_section_php)
+		touch /tmp/tmp-gyarados/composer.json
+		set GYARADOS_PHP_SHOW false
+	) = (__gyarados_section_php)
 end

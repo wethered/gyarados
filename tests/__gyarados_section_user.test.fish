@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 end
 
 function teardown
@@ -10,18 +10,18 @@ end
 
 test "Displays user when different from logname"
 	(
-		set USER spacefishUser
+		set USER gyaradosUser
 
 		set_color --bold
 		echo -n "with "
 		set_color normal
 		set_color --bold yellow
-		echo -n "spacefishUser"
+		echo -n "gyaradosUser"
 		set_color normal
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
+	) = (__gyarados_section_user)
 end
 
 test "Displays user when UID = 0"
@@ -37,7 +37,7 @@ test "Displays user when UID = 0"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
+	) = (__gyarados_section_user)
 end
 
 test "Displays user when there's an SSH connection"
@@ -53,7 +53,7 @@ test "Displays user when there's an SSH connection"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
+	) = (__gyarados_section_user)
 end
 
 test "Changes user color when logged in as root"
@@ -69,12 +69,12 @@ test "Changes user color when logged in as root"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
+	) = (__gyarados_section_user)
 end
 
-test "Displays user when SPACEFISH_USER_SHOW is set to \"always\""
+test "Displays user when GYARADOS_USER_SHOW is set to \"always\""
 	(
-		set SPACEFISH_USER_SHOW always
+		set GYARADOS_USER_SHOW always
 
 		set_color --bold
 		echo -n "with "
@@ -85,11 +85,11 @@ test "Displays user when SPACEFISH_USER_SHOW is set to \"always\""
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
+	) = (__gyarados_section_user)
 end
 
-test "Doesn't display user when SPACEFISH_USER_SHOW is set to \"false\""
+test "Doesn't display user when GYARADOS_USER_SHOW is set to \"false\""
 	(
-		set SPACEFISH_USER_SHOW false
-	) = (__sf_section_user)
+		set GYARADOS_USER_SHOW false
+	) = (__gyarados_section_user)
 end

@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/gyarados_test_setup.fish
 
 function setup
-	spacefish_test_setup
+	gyarados_test_setup
 end
 
 test "Displays default char with status code 0"
@@ -17,7 +17,7 @@ test "Displays default char with status code 0"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
+	) = (__gyarados_section_char)
 end
 
 test "Displays default char with status code 1"
@@ -33,13 +33,13 @@ test "Displays default char with status code 1"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
+	) = (__gyarados_section_char)
 end
 
-test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
+test "Changing GYARADOS_CHAR_SYMBOL changes the displayed character"
 	(
 		set sf_exit_code 0
-		set SPACEFISH_CHAR_SYMBOL ·
+		set GYARADOS_CHAR_SYMBOL ·
 
 		set_color --bold
 		echo -n ""
@@ -50,13 +50,13 @@ test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
+	) = (__gyarados_section_char)
 end
 
-test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
+test "Changing GYARADOS_CHAR_PREFIX changes the character prefix"
 	(
 		set sf_exit_code 0
-		set SPACEFISH_CHAR_PREFIX ·
+		set GYARADOS_CHAR_PREFIX ·
 
 		set_color --bold
 		echo -n "·"
@@ -67,13 +67,13 @@ test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
+	) = (__gyarados_section_char)
 end
 
-test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
+test "Changing GYARADOS_CHAR_SYMBOL changes the character suffix"
 	(
 		set sf_exit_code 0
-		set SPACEFISH_CHAR_SUFFIX ·
+		set GYARADOS_CHAR_SUFFIX ·
 
 		set_color --bold
 		echo -n ""
@@ -84,5 +84,5 @@ test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_char)
+	) = (__gyarados_section_char)
 end
