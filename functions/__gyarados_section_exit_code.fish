@@ -16,11 +16,11 @@ function __gyarados_section_exit_code -d "Shows the exit code from the previous 
 	# Section
 	# ------------------------------------------------------------------------------
 
-	[ $GYARADOS_EXIT_CODE_SHOW = false ]; or test $sf_exit_code -eq 0; and return
+	[ $GYARADOS_EXIT_CODE_SHOW = false ]; or test $gyarados_exit_code -eq 0; and return
 
 	__gyarados_lib_section \
 		$GYARADOS_EXIT_CODE_COLOR \
 		$GYARADOS_EXIT_CODE_PREFIX \
-		"$GYARADOS_EXIT_CODE_SYMBOL$sf_exit_code" \
+		"$GYARADOS_EXIT_CODE_SYMBOL$gyarados_exit_code" \
 		$GYARADOS_EXIT_CODE_SUFFIX
 end

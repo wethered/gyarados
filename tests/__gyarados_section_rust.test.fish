@@ -67,7 +67,7 @@ end
 test "Changing GYARADOS_RUST_PREFIX changes the character prefix"
 	(
 		touch /tmp/tmp-gyarados/Cargo.toml
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_RUST_PREFIX ·
 
 		set_color --bold
@@ -85,7 +85,7 @@ end
 test "Changing GYARADOS_RUST_SUFFIX changes the character suffix"
 	(
 		touch /tmp/tmp-gyarados/Cargo.toml
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_RUST_SUFFIX ·
 
 		set_color --bold

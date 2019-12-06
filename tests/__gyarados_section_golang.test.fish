@@ -132,7 +132,7 @@ end
 test "Changing GYARADOS_GOLANG_PREFIX changes the character prefix"
 	(
 		touch /tmp/tmp-gyarados/Gopkg.lock
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_GOLANG_PREFIX ·
 
 		set_color --bold
@@ -150,7 +150,7 @@ end
 test "Changing GYARADOS_GOLANG_SUFFIX changes the character suffix"
 	(
 		touch /tmp/tmp-gyarados/Gopkg.lock
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_GOLANG_SUFFIX ·
 
 		set_color --bold

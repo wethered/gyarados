@@ -118,7 +118,7 @@ end
 test "Changing GYARADOS_PYENV_PREFIX changes the character prefix"
 	(
 		touch /tmp/tmp-gyarados/requirements.txt
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_PYENV_PREFIX ·
 
 		set_color --bold
@@ -136,7 +136,7 @@ end
 test "Changing GYARADOS_PYENV_SUFFIX changes the character suffix"
 	(
 		touch /tmp/tmp-gyarados/requirements.txt
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_PYENV_SUFFIX ·
 
 		set_color --bold

@@ -43,7 +43,7 @@ end
 
 test "Changing GYARADOS_KUBECONTEXT_PREFIX changes the character prefix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_KUBECONTEXT_PREFIX ·
 
 		set_color --bold
@@ -60,7 +60,7 @@ end
 
 test "Changing GYARADOS_KUBECONTEXT_SUFFIX changes the character suffix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_KUBECONTEXT_SUFFIX ·
 
 		set_color --bold
@@ -84,7 +84,7 @@ end
 test "Doesn't display the namespace section when GYARADOS_KUBECONTEXT_NAMESPACE_SHOW is set to \"false\""
 	(
 		set GYARADOS_KUBECONTEXT_NAMESPACE_SHOW false
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_KUBECONTEXT_SUFFIX ·
 
 		set_color --bold
@@ -103,7 +103,7 @@ test "Doesn't display the namespace section when kube_context is set to \"defaul
 	(
 		mock kubectl config 0 "echo \"default\""
 
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_KUBECONTEXT_SUFFIX ·
 
 		set_color --bold

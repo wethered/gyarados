@@ -1,6 +1,6 @@
 function gyarados_test_setup
 	# Delete all lingering gyarados variables
-	set --name | grep -E '^(GYARADOS_|sf_)' | while read -l var
+	set --name | grep -E '^(GYARADOS_|gyarados_)' | while read -l var
 		set -e $var
 	end
 

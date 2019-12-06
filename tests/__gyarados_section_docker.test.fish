@@ -175,7 +175,7 @@ end
 
 test "Changing GYARADOS_DOCKER_PREFIX changes the character prefix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_DOCKER_PREFIX ·
 		touch Dockerfile
 

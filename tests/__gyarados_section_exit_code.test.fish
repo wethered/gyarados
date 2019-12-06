@@ -6,14 +6,14 @@ end
 
 test "Exit code not enabled by default"
 	(
-		set sf_exit_code 1
+		set gyarados_exit_code 1
 	) = (__gyarados_section_exit_code)
 end
 
 test "Enable exit-code, shows exit code upon fail"
 	(
 		set GYARADOS_EXIT_CODE_SHOW true
-		set sf_exit_code 1
+		set gyarados_exit_code 1
 
 		set_color --bold
 		set_color normal
@@ -29,7 +29,7 @@ end
 test "Hides exit code upon success"
 	(
 		set GYARADOS_EXIT_CODE_SHOW true
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 	) = (__gyarados_section_exit_code)
 end
 
@@ -37,7 +37,7 @@ test "Color-changing exit code"
 	(
 		set GYARADOS_EXIT_CODE_SHOW true
 		set GYARADOS_EXIT_CODE_COLOR "purple"
-		set sf_exit_code 1
+		set gyarados_exit_code 1
 
 		set_color --bold
 		set_color normal

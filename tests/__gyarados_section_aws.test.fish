@@ -50,7 +50,7 @@ end
 
 test "Changing GYARADOS_AWS_PREFIX changes the character prefix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_AWS_PREFIX ·
 
 		set_color --bold
@@ -67,7 +67,7 @@ end
 
 test "Changing GYARADOS_AWS_SUFFIX changes the character suffix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_AWS_SUFFIX ·
 
 		set_color --bold

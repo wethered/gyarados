@@ -50,7 +50,7 @@ end
 test "Prints nvm version when nvm is installed"
 	(
 		mkdir /tmp/tmp-gyarados/node_modules
-		set -e sf_node_version
+		set -e gyarados_node_version
 		mock nvm current 0 "echo \"v9.8.0\""
 
 		set_color --bold
@@ -68,8 +68,8 @@ end
 test "Prints cached nvm version if previously used"
 	(
 		mkdir /tmp/tmp-gyarados/node_modules
-		set sf_node_version "v1.2.3"
-		set sf_last_nvm_bin "path_to_bin"
+		set gyarados_node_version "v1.2.3"
+		set gyarados_last_nvm_bin "path_to_bin"
 		set NVM_BIN "path_to_bin"
 		mock nvm current 0
 
@@ -143,7 +143,7 @@ end
 test "Changing GYARADOS_NODE_PREFIX changes the character prefix"
 	(
 		mkdir /tmp/tmp-gyarados/node_modules
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_NODE_PREFIX ·
 
 		set_color --bold
@@ -161,7 +161,7 @@ end
 test "Changing GYARADOS_NODE_PREFIX changes the character prefix"
 	(
 		mkdir /tmp/tmp-gyarados/node_modules
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_NODE_SUFFIX ·
 
 		set_color --bold
@@ -179,7 +179,7 @@ end
 test "Setting GYARADOS_NODE_DEFAULT_VERSION to the current version disables the section"
 	(
 		mkdir /tmp/tmp-gyarados/node_modules
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_NODE_DEFAULT_VERSION v9.8.0
 	) = (__gyarados_section_node)
 end

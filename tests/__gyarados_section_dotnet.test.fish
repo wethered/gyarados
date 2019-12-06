@@ -155,7 +155,7 @@ end
 test "Changing GYARADOS_DOTNET_PREFIX changes the character prefix"
 	(
 		touch /tmp/tmp-gyarados/tmp.sln
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_DOTNET_PREFIX ·
 
 		set_color --bold
@@ -173,7 +173,7 @@ end
 test "Changing GYARADOS_DOTNET_SUFFIX changes the character prefix"
 	(
 		touch /tmp/tmp-gyarados/tmp.sln
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_DOTNET_SUFFIX ·
 
 		set_color --bold

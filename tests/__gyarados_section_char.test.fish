@@ -6,7 +6,7 @@ end
 
 test "Displays default char with status code 0"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 
 		set_color --bold
 		echo -n ""
@@ -22,7 +22,7 @@ end
 
 test "Displays default char with status code 1"
 	(
-		set sf_exit_code 1
+		set gyarados_exit_code 1
 
 		set_color --bold
 		echo -n ""
@@ -38,7 +38,7 @@ end
 
 test "Changing GYARADOS_CHAR_SYMBOL changes the displayed character"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_CHAR_SYMBOL ·
 
 		set_color --bold
@@ -55,7 +55,7 @@ end
 
 test "Changing GYARADOS_CHAR_PREFIX changes the character prefix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_CHAR_PREFIX ·
 
 		set_color --bold
@@ -72,7 +72,7 @@ end
 
 test "Changing GYARADOS_CHAR_SYMBOL changes the character suffix"
 	(
-		set sf_exit_code 0
+		set gyarados_exit_code 0
 		set GYARADOS_CHAR_SUFFIX ·
 
 		set_color --bold

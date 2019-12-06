@@ -92,7 +92,7 @@ end
 
 test "Only prints the prefix for the second consecutive section"
 	(
-		set sf_prompt_opened false
+		set gyarados_prompt_opened false
 
 		set_color --bold red
 		echo -n "test content 1"

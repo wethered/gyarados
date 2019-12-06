@@ -5,7 +5,7 @@ function __gyarados_lib_section -a color prefix content suffix
 		set prefix
 	end
 
-	if test "$sf_prompt_opened" = "true" -a "$GYARADOS_PROMPT_PREFIXES_SHOW" = "true"
+	if test "$gyarados_prompt_opened" = "true" -a "$GYARADOS_PROMPT_PREFIXES_SHOW" = "true"
 		# Echo prefixes in bold white
 		set_color --bold
 		echo -e -n -s $prefix
@@ -13,7 +13,7 @@ function __gyarados_lib_section -a color prefix content suffix
 	end
 
 	# Set the prompt as having been opened
-	set -g sf_prompt_opened true
+	set -g gyarados_prompt_opened true
 
 	set_color --bold $color
 	echo -e -n $content
