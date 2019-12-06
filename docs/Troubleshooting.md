@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This page aimed to help you fix common problems encountered while using spacefish.
+This page aimed to help you fix common problems encountered while using gyarados.
 
 ## My prompt is filling with errors
 
@@ -12,15 +12,15 @@ Try all of the following troubleshooting steps:
   fish --version
   ```
 
-* Update spacefish with `fisher` or `omf`
+* Update gyarados with `fisher` or `omf`
 
   ```sh
-  fisher add matchai/spacefish
+  fisher add matchai/gyarados
   # or
-  omf update spacefish
+  omf update gyarados
   ```
 
-* If errors persist, please [open an issue](https://github.com/matchai/spacefish/issues/new)
+* If errors persist, please [open an issue](https://github.com/matchai/gyarados/issues/new)
 
 ## What's the weird symbol beside the `git` branch?
 
@@ -31,7 +31,7 @@ You need to have a powerline patched font in order to properly display `git` bra
 
 ## What's the weird character in front of a section?
 
-This is not an issue with spacefish. Spacefish uses Unicode symbols to represent `SPACESFISH_*_SYMBOL` in sections. To solve this problem:
+This is not an issue with gyarados. Gyarados uses Unicode symbols to represent `GYARADOS_*_SYMBOL` in sections. To solve this problem:
 
 * Verify your terminal emulator supports Unicode characters with this command:
 
@@ -43,13 +43,13 @@ This is not an issue with spacefish. Spacefish uses Unicode symbols to represent
 * Configure your terminal emulator to use UTF-8 character encoding.
 
 
-In the event that Unicode characters aren't supported, you can replace them with characters that are compatible with your terminal with `SPACEFISH_*_SYMBOL` options. Check out the [Options](./docs/Options.md) page for more information.
+In the event that Unicode characters aren't supported, you can replace them with characters that are compatible with your terminal with `GYARADOS_*_SYMBOL` options. Check out the [Options](./docs/Options.md) page for more information.
 
 ## Why is my prompt slow?
 
-Spacefish may run more slowlyin big repositories since the status checks add up to be expensive operations.
+Gyarados may run more slowlyin big repositories since the status checks add up to be expensive operations.
 
-To speed up your prompt, try to reduce the number of unused spacefish sections that are enabled. Spacefish only loads the sections mentioned in `SPACEFISH_PROMPT_ORDER`. If you think some sections might not be be useful to you, you can disable them by not including their names in the prompt order.
+To speed up your prompt, try to reduce the number of unused gyarados sections that are enabled. Gyarados only loads the sections mentioned in `GYARADOS_PROMPT_ORDER`. If you think some sections might not be be useful to you, you can disable them by not including their names in the prompt order.
 
 ## Why do my section icons overlap each other?
 
@@ -69,7 +69,7 @@ In _iTerm_ follow these instructions:
 
 ![preview](../images/preview.gif)
 
-Preview shows a `spacefish` setup with:
+Preview shows a `gyarados` setup with:
 
 * [Hyper](https://hyper.is) as the terminal emulator.
 * [One Dark](https://www.npmjs.com/package/hyperterm-atom-dark) color theme from [Atom](https://atom.io/) editor.
@@ -77,4 +77,4 @@ Preview shows a `spacefish` setup with:
 
 ## My problem wasn't solved
 
-If the above suggestions don't address your problem, feel free to [open an issue](https://github.com/matchai/spacefish/issues/new), describe your problem and we will gladly help you.
+If the above suggestions don't address your problem, feel free to [open an issue](https://github.com/matchai/gyarados/issues/new), describe your problem and we will gladly help you.

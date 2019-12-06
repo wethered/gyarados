@@ -11,7 +11,7 @@ To run the unit tests, simply run:
 ./tests/run.fish
 ```
 
-The unit tests will create their own temporary fish environment, so your local fish and spacefish configuration will not affect the unit test run.
+The unit tests will create their own temporary fish environment, so your local fish and gyarados configuration will not affect the unit test run.
 
 ### Will it slow down the prompt?
 

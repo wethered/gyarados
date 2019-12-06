@@ -1,6 +1,6 @@
 ## Options
 
-You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
+You have ability to customize or disable specific elements of Gyarados. All options must be overridden in your `config.fish`.
 
 Colors for sections can be [basic colors](https://fishshell.com/docs/current/commands.html#set_color) or [color codes](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
 
@@ -8,16 +8,16 @@ Colors for sections can be [basic colors](https://fishshell.com/docs/current/com
 
 ### Order
 
-You can specify the order of prompt section using `SPACEFISH_PROMPT_ORDER` option. Use Zsh array syntax to define your own prompt order.
+You can specify the order of prompt section using `GYARADOS_PROMPT_ORDER` option. Use Zsh array syntax to define your own prompt order.
 
-The order also defines which sections that Spacefish loads. If you're struggling with slow prompt, you can just omit the sections that you don't use, and they won't be loaded.
+The order also defines which sections that Gyarados loads. If you're struggling with slow prompt, you can just omit the sections that you don't use, and they won't be loaded.
 
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set GYARADOS_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
-You can also add items to the right prompt by specifying them in the `SPACEFISH_RPROMPT_ORDER` option. By default `SPACEFISH_RPROMPT_ORDER` is empty.
+You can also add items to the right prompt by specifying them in the `GYARADOS_RPROMPT_ORDER` option. By default `GYARADOS_RPROMPT_ORDER` is empty.
 
 ### Prompt
 
@@ -25,41 +25,41 @@ This group of options defines a behavior of prompt and standard parameters for s
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_PROMPT_ADD_NEWLINE` | `true` | Adds a newline character before each prompt line |
-| `SPACEFISH_PROMPT_SEPARATE_LINE` | `true` | Make the prompt span across two lines |
-| `SPACEFISH_PROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in prompt |
-| `SPACEFISH_PROMPT_PREFIXES_SHOW` | `true` | Show prefixes before prompt sections |
-| `SPACEFISH_PROMPT_SUFFIXES_SHOW` | `true` | Show suffixes before prompt sections |
-| `SPACEFISH_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
-| `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
+| `GYARADOS_PROMPT_ADD_NEWLINE` | `true` | Adds a newline character before each prompt line |
+| `GYARADOS_PROMPT_SEPARATE_LINE` | `true` | Make the prompt span across two lines |
+| `GYARADOS_PROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in prompt |
+| `GYARADOS_PROMPT_PREFIXES_SHOW` | `true` | Show prefixes before prompt sections |
+| `GYARADOS_PROMPT_SUFFIXES_SHOW` | `true` | Show suffixes before prompt sections |
+| `GYARADOS_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
+| `GYARADOS_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
 
 ### Time \(`time`\)
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_TIME_SHOW` | `false` | Show current time |
-| `SPACEFISH_DATE_SHOW` | `false·` | Show today's date |
-| `SPACEFISH_TIME_PREFIX` | `at·` | Prefix before time section |
-| `SPACEFISH_TIME_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after time section |
-| `SPACEFISH_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
-| `SPACEFISH_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
-| `SPACEFISH_TIME_COLOR` | `yellow` | Color of time section |
+| `GYARADOS_TIME_SHOW` | `false` | Show current time |
+| `GYARADOS_DATE_SHOW` | `false·` | Show today's date |
+| `GYARADOS_TIME_PREFIX` | `at·` | Prefix before time section |
+| `GYARADOS_TIME_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after time section |
+| `GYARADOS_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
+| `GYARADOS_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
+| `GYARADOS_TIME_COLOR` | `yellow` | Color of time section |
 
 ### Username \(`user`\)
 
-By default, a username is shown only when it's not the same as `$LOGNAME`, when you're connected via SSH or when you're root. Root user is highlighted in `SPACEFISH_USER_COLOR_ROOT` color (red as default).
+By default, a username is shown only when it's not the same as `$LOGNAME`, when you're connected via SSH or when you're root. Root user is highlighted in `GYARADOS_USER_COLOR_ROOT` color (red as default).
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_USER_SHOW` | `true` | Show user section (`true`, `false`, `always` or `needed`) |
-| `SPACEFISH_USER_PREFIX` | `with·` | Prefix before user section |
-| `SPACEFISH_USER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after user section |
-| `SPACEFISH_USER_COLOR` | `yellow` | Color of user section |
-| `SPACEFISH_USER_COLOR_ROOT` | `red` | Color of user section when it's root |
+| `GYARADOS_USER_SHOW` | `true` | Show user section (`true`, `false`, `always` or `needed`) |
+| `GYARADOS_USER_PREFIX` | `with·` | Prefix before user section |
+| `GYARADOS_USER_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after user section |
+| `GYARADOS_USER_COLOR` | `yellow` | Color of user section |
+| `GYARADOS_USER_COLOR_ROOT` | `red` | Color of user section when it's root |
 
-`SPACEFISH_USER_SHOW` defines when to show username section. Here are possible values:
+`GYARADOS_USER_SHOW` defines when to show username section. Here are possible values:
 
-| `SPACEFISH_USER_SHOW` | Show on local  | Show on remote  |
+| `GYARADOS_USER_SHOW` | Show on local  | Show on remote  |
 | :-------------------: | :------------- | :-------------- |
 | `false`               | Never          | Never           |
 | `always`              | Always         | Always          |
@@ -69,32 +69,32 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 
 ### Directory \(`dir`\)
 
-Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in a Git repository, this section shows only the project title and relevant status icons. If current directory is write-protected or if current user doesn't have write permissions, a padlock (by default) will be displayed as a suffix.
+Directory is always shown and truncated to the value of `GYARADOS_DIR_TRUNC`. While you are in a Git repository, this section shows only the project title and relevant status icons. If current directory is write-protected or if current user doesn't have write permissions, a padlock (by default) will be displayed as a suffix.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_DIR_SHOW` | `true` | Show directory section |
-| `SPACEFISH_DIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
-| `SPACEFISH_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
-| `SPACEFISH_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
-| `SPACEFISH_DIR_COLOR` | `cyan` | Color of directory section |
-| `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
-| `SPACEFISH_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
-| `SPACEFISH_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
-| `SPACEFISH_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
+| `GYARADOS_DIR_SHOW` | `true` | Show directory section |
+| `GYARADOS_DIR_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
+| `GYARADOS_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
+| `GYARADOS_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
+| `GYARADOS_DIR_COLOR` | `cyan` | Color of directory section |
+| `GYARADOS_DIR_PREFIX` | `in·` | Prefix before current directory |
+| `GYARADOS_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
+| `GYARADOS_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
+| `GYARADOS_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
 
 ### Hostname \(`host`\)
 
-Hostname should only be shown while you are connected to another machine using SSH, unless you change it using SPACEFISH_HOST_SHOW.
+Hostname should only be shown while you are connected to another machine using SSH, unless you change it using GYARADOS_HOST_SHOW.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_HOST_SHOW` | `true` | Show host section (`true`, `false`, `always`) |
-| `SPACEFISH_HOST_SHOW_FULL` | `false` | Show full hostname section (`true`, `false`) |
-| `SPACEFISH_HOST_PREFIX` | `at·` | Prefix before the hostname |
-| `SPACEFISH_HOST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
-| `SPACEFISH_HOST_COLOR` | `blue` | Color of the hostname |
-| `SPACEFISH_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
+| `GYARADOS_HOST_SHOW` | `true` | Show host section (`true`, `false`, `always`) |
+| `GYARADOS_HOST_SHOW_FULL` | `false` | Show full hostname section (`true`, `false`) |
+| `GYARADOS_HOST_PREFIX` | `at·` | Prefix before the hostname |
+| `GYARADOS_HOST_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
+| `GYARADOS_HOST_COLOR` | `blue` | Color of the hostname |
+| `GYARADOS_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
 
 ### Git \(`git`\)
 
@@ -102,19 +102,19 @@ Git section is consists with `git_branch` and `git_status` subsections. It is sh
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_GIT_SHOW` | `true` | Show Git section |
-| `SPACEFISH_GIT_PREFIX` | `on·` | Prefix before Git section |
-| `SPACEFISH_GIT_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Git section |
-| `SPACEFISH_GIT_SYMBOL` | ![·](https://user-images.githubusercontent.com/3459374/34947621-4f324a92-fa13-11e7-9b99-cdba2cdda6b9.png) | Character to be shown before Git section \(requires [powerline patched font](https://github.com/powerline/fonts) |
+| `GYARADOS_GIT_SHOW` | `true` | Show Git section |
+| `GYARADOS_GIT_PREFIX` | `on·` | Prefix before Git section |
+| `GYARADOS_GIT_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Git section |
+| `GYARADOS_GIT_SYMBOL` | ![·](https://user-images.githubusercontent.com/3459374/34947621-4f324a92-fa13-11e7-9b99-cdba2cdda6b9.png) | Character to be shown before Git section \(requires [powerline patched font](https://github.com/powerline/fonts) |
 
 #### Git branch \(`git_branch`\)
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_GIT_BRANCH_SHOW` | `true` | Show Git branch subsection |
-| `SPACEFISH_GIT_BRANCH_PREFIX` | `$SPACEFISH_GIT_SYMBOL` | Prefix before Git branch subsection |
-| `SPACEFISH_GIT_BRANCH_SUFFIX` | ` ` | Suffix after Git branch subsection |
-| `SPACEFISH_GIT_BRANCH_COLOR` | `(set_color magenta)` | Color of Git branch subsection |
+| `GYARADOS_GIT_BRANCH_SHOW` | `true` | Show Git branch subsection |
+| `GYARADOS_GIT_BRANCH_PREFIX` | `$GYARADOS_GIT_SYMBOL` | Prefix before Git branch subsection |
+| `GYARADOS_GIT_BRANCH_SUFFIX` | ` ` | Suffix after Git branch subsection |
+| `GYARADOS_GIT_BRANCH_COLOR` | `(set_color magenta)` | Color of Git branch subsection |
 
 #### Git status \(`git_status`\)
 
@@ -122,20 +122,20 @@ Git status indicators is shown only when you have dirty repository.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_GIT_STATUS_SHOW` | `true` | Show Git status subsection |
-| `SPACEFISH_GIT_STATUS_PREFIX` | `·[` | Prefix before Git status subsection |
-| `SPACEFISH_GIT_STATUS_SUFFIX` | `]` | Suffix after Git status subsection |
-| `SPACEFISH_GIT_STATUS_COLOR` | `red` | Color of Git status subsection |
-| `SPACEFISH_GIT_STATUS_UNTRACKED` | `?` | Indicator for untracked changes |
-| `SPACEFISH_GIT_STATUS_ADDED` | `+` | Indicator for added changes |
-| `SPACEFISH_GIT_STATUS_MODIFIED` | `!` | Indicator for unstaged files |
-| `SPACEFISH_GIT_STATUS_RENAMED` | `»` | Indicator for renamed files |
-| `SPACEFISH_GIT_STATUS_DELETED` | `✘` | Indicator for deleted files |
-| `SPACEFISH_GIT_STATUS_STASHED` | `$` | Indicator for stashed changes |
-| `SPACEFISH_GIT_STATUS_UNMERGED` | `=` | Indicator for unmerged changes |
-| `SPACEFISH_GIT_STATUS_AHEAD` | `⇡` | Indicator for unpushed changes \(ahead of remote branch\) |
-| `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
-| `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
+| `GYARADOS_GIT_STATUS_SHOW` | `true` | Show Git status subsection |
+| `GYARADOS_GIT_STATUS_PREFIX` | `·[` | Prefix before Git status subsection |
+| `GYARADOS_GIT_STATUS_SUFFIX` | `]` | Suffix after Git status subsection |
+| `GYARADOS_GIT_STATUS_COLOR` | `red` | Color of Git status subsection |
+| `GYARADOS_GIT_STATUS_UNTRACKED` | `?` | Indicator for untracked changes |
+| `GYARADOS_GIT_STATUS_ADDED` | `+` | Indicator for added changes |
+| `GYARADOS_GIT_STATUS_MODIFIED` | `!` | Indicator for unstaged files |
+| `GYARADOS_GIT_STATUS_RENAMED` | `»` | Indicator for renamed files |
+| `GYARADOS_GIT_STATUS_DELETED` | `✘` | Indicator for deleted files |
+| `GYARADOS_GIT_STATUS_STASHED` | `$` | Indicator for stashed changes |
+| `GYARADOS_GIT_STATUS_UNMERGED` | `=` | Indicator for unmerged changes |
+| `GYARADOS_GIT_STATUS_AHEAD` | `⇡` | Indicator for unpushed changes \(ahead of remote branch\) |
+| `GYARADOS_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
+| `GYARADOS_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
 
 ### Package version \(`package`\)
 
@@ -150,26 +150,26 @@ Package version is shown when repository is a package (e.g. contains a `package.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_PACKAGE_SHOW` | `true` | Show package version |
-| `SPACEFISH_PACKAGE_PREFIX` | `is·` | Prefix before package version section |
-| `SPACEFISH_PACKAGE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after package version section |
-| `SPACEFISH_PACKAGE_SYMBOL` | `📦·` | Character to be shown before package version |
-| `SPACEFISH_PACKAGE_COLOR` | `red` | Color of package version section |
+| `GYARADOS_PACKAGE_SHOW` | `true` | Show package version |
+| `GYARADOS_PACKAGE_PREFIX` | `is·` | Prefix before package version section |
+| `GYARADOS_PACKAGE_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after package version section |
+| `GYARADOS_PACKAGE_SYMBOL` | `📦·` | Character to be shown before package version |
+| `GYARADOS_PACKAGE_COLOR` | `red` | Color of package version section |
 
 ### Node.js \(`node`\)
 
 Node.js section is shown only in directories that contain `package.json` file, or `node_modules` folder, or any other file with `.js` extension.
 
-If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and your current version is the same as `SPACEFISH_NODE_DEFAULT_VERSION`, then Node.js section will be hidden.
+If you set `GYARADOS_NODE_DEFAULT_VERSION` to the default Node.js version and your current version is the same as `GYARADOS_NODE_DEFAULT_VERSION`, then Node.js section will be hidden.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_NODE_SHOW` | `true` | Current Node.js section |
-| `SPACEFISH_NODE_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Node.js section |
-| `SPACEFISH_NODE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Node.js section |
-| `SPACEFISH_NODE_SYMBOL` | `⬢·` | Character to be shown before Node.js version |
-| `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
-| `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
+| `GYARADOS_NODE_SHOW` | `true` | Current Node.js section |
+| `GYARADOS_NODE_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before Node.js section |
+| `GYARADOS_NODE_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Node.js section |
+| `GYARADOS_NODE_SYMBOL` | `⬢·` | Character to be shown before Node.js version |
+| `GYARADOS_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
+| `GYARADOS_NODE_COLOR` | `green` | Color of Node.js section |
 
 ### Julia \(`julia`\)
 
@@ -177,11 +177,11 @@ Julia section is shown only in directories that contain any file with `.jl` exte
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_JULIA_SHOW` | `true` | Show Julia section |
-| `SPACEFISH_JULIA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Julia section |
-| `SPACEFISH_JULIA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Julia section |
-| `SPACEFISH_JULIA_SYMBOL` | `ஃ·` | Character to be shown before Julia version |
-| `SPACEFISH_JULIA_COLOR` | `green` | Color of Julia section |
+| `GYARADOS_JULIA_SHOW` | `true` | Show Julia section |
+| `GYARADOS_JULIA_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before Julia section |
+| `GYARADOS_JULIA_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Julia section |
+| `GYARADOS_JULIA_SYMBOL` | `ஃ·` | Character to be shown before Julia version |
+| `GYARADOS_JULIA_COLOR` | `green` | Color of Julia section |
 
 ### Docker (`docker`)
 
@@ -190,12 +190,12 @@ The section will also appear when `.dockerenv` is in the root directory, signify
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_DOCKER_SHOW` | `true` | Show current Docker version |
-| `SPACEFISH_DOCKER_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Docker section |
-| `SPACEFISH_DOCKER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Docker section |
-| `SPACEFISH_DOCKER_SYMBOL` | `🐳·` | Character to be shown before Docker version |
-| `SPACEFISH_DOCKER_COLOR` | `cyan` | Color of Docker section |
-| `SPACEFISH_DOCKER_VERBOSE_VERSION` | `false` | Show full version name. (Beta, Nightly) |
+| `GYARADOS_DOCKER_SHOW` | `true` | Show current Docker version |
+| `GYARADOS_DOCKER_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the Docker section |
+| `GYARADOS_DOCKER_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the Docker section |
+| `GYARADOS_DOCKER_SYMBOL` | `🐳·` | Character to be shown before Docker version |
+| `GYARADOS_DOCKER_COLOR` | `cyan` | Color of Docker section |
+| `GYARADOS_DOCKER_VERBOSE_VERSION` | `false` | Show full version name. (Beta, Nightly) |
 
 ### Ruby \(`ruby`\)
 
@@ -203,11 +203,11 @@ Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`,
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_RUBY_SHOW` | `true` | Show Ruby section |
-| `SPACEFISH_RUBY_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Ruby section |
-| `SPACEFISH_RUBY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
-| `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
-| `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
+| `GYARADOS_RUBY_SHOW` | `true` | Show Ruby section |
+| `GYARADOS_RUBY_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before Ruby section |
+| `GYARADOS_RUBY_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
+| `GYARADOS_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
+| `GYARADOS_RUBY_COLOR` | `red` | Color of Ruby section |
 
 ### Haskell \(`haskell`\)
 
@@ -215,11 +215,11 @@ Haskell section is shown only in directories that contain `stack.yaml`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_HASKELL_SHOW` | `true` | Show Haskell section |
-| `SPACEFISH_HASKELL_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
-| `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
-| `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
-| `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
+| `GYARADOS_HASKELL_SHOW` | `true` | Show Haskell section |
+| `GYARADOS_HASKELL_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
+| `GYARADOS_HASKELL_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
+| `GYARADOS_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
+| `GYARADOS_HASKELL_COLOR` | `red` | Color of Haskell section |
 
 ### Amazon Web Services (AWS) (`aws`)
 
@@ -227,11 +227,11 @@ Shows selected Amazon Web Services profile configured using [`AWS_VAULT`](https:
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
-| `SPACEFISH_AWS_PREFIX` | `using·` | Prefix before the AWS section |
-| `SPACEFISH_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
-| `SPACEFISH_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
-| `SPACEFISH_AWS_COLOR` | `ff8700` | Color of AWS section |
+| `GYARADOS_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
+| `GYARADOS_AWS_PREFIX` | `using·` | Prefix before the AWS section |
+| `GYARADOS_AWS_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
+| `GYARADOS_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
+| `GYARADOS_AWS_COLOR` | `ff8700` | Color of AWS section |
 
 ### Virtualenv (`venv`)
 
@@ -239,12 +239,12 @@ Python virtual environment when $VIRTUAL_ENV is set.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_VENV_SHOW` | `true` | Show current Python virtualenv or not |
-| `SPACEFISH_VENV_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the virtualenv section |
-| `SPACEFISH_VENV_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the virtualenv section |
-| `SPACEFISH_VENV_SYMBOL` | `·` | Character to be shown before virtualenv |
-| `SPACEFISH_VENV_GENERIC_NAMES` | `virtualenv venv .venv` | If the virtualenv folder is in this *array*, than use its parent directory as its name instead |
-| `SPACEFISH_VENV_COLOR` | `blue` | Color of virtualenv environment section |
+| `GYARADOS_VENV_SHOW` | `true` | Show current Python virtualenv or not |
+| `GYARADOS_VENV_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the virtualenv section |
+| `GYARADOS_VENV_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the virtualenv section |
+| `GYARADOS_VENV_SYMBOL` | `·` | Character to be shown before virtualenv |
+| `GYARADOS_VENV_GENERIC_NAMES` | `virtualenv venv .venv` | If the virtualenv folder is in this *array*, than use its parent directory as its name instead |
+| `GYARADOS_VENV_COLOR` | `blue` | Color of virtualenv environment section |
 
 
 ### Conda \(`conda`\)
@@ -253,11 +253,11 @@ Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is s
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_CONDA_SHOW` | `true` | Show current Conda version |
-| `SPACEFISH_CONDA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
-| `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
-| `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
-| `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
+| `GYARADOS_CONDA_SHOW` | `true` | Show current Conda version |
+| `GYARADOS_CONDA_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
+| `GYARADOS_CONDA_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
+| `GYARADOS_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
+| `GYARADOS_CONDA_COLOR` | `blue` | Color of Conda section |
 
 
 ### Elixir \(`elixir`\)
@@ -266,11 +266,11 @@ Elixir section is shown when ```mix.exs``` is found or elixir files are found an
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_ELIXIR_SHOW` | `true` | Show current Elixir version |
-| `SPACEFISH_ELIXIR_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the elixir section |
-| `SPACEFISH_ELIXIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the elixir section |
-| `SPACEFISH_ELIXIR_SYMBOL` | `💧·` | Character to be shown before Elixir version |
-| `SPACEFISH_ELIXIR_COLOR` | `magenta` | Color of Elixir section |
+| `GYARADOS_ELIXIR_SHOW` | `true` | Show current Elixir version |
+| `GYARADOS_ELIXIR_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the elixir section |
+| `GYARADOS_ELIXIR_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the elixir section |
+| `GYARADOS_ELIXIR_SYMBOL` | `💧·` | Character to be shown before Elixir version |
+| `GYARADOS_ELIXIR_COLOR` | `magenta` | Color of Elixir section |
 
 ### Pyenv \(`pyenv`\)
 
@@ -279,11 +279,11 @@ The section will also be shown if the `$PYENV_VERSION` environment variable is s
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_PYENV_SHOW` | `true` | Show current Pyenv version |
-| `SPACEFISH_PYENV_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the pyenv section |
-| `SPACEFISH_PYENV_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the pyenv section |
-| `SPACEFISH_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
-| `SPACEFISH_PYENV_COLOR` | `yellow` | Color of Pyenv section |
+| `GYARADOS_PYENV_SHOW` | `true` | Show current Pyenv version |
+| `GYARADOS_PYENV_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the pyenv section |
+| `GYARADOS_PYENV_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the pyenv section |
+| `GYARADOS_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
+| `GYARADOS_PYENV_COLOR` | `yellow` | Color of Pyenv section |
 
 ### Go \(`golang`\)
 
@@ -291,11 +291,11 @@ Go section is shown only in directories that contain `Godeps`, `glide.yaml`, `go
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_GOLANG_SHOW` | `true` | Show current Go version |
-| `SPACEFISH_GOLANG_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Go section |
-| `SPACEFISH_GOLANG_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Go section |
-| `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
-| `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
+| `GYARADOS_GOLANG_SHOW` | `true` | Show current Go version |
+| `GYARADOS_GOLANG_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the Go section |
+| `GYARADOS_GOLANG_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the Go section |
+| `GYARADOS_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
+| `GYARADOS_GOLANG_COLOR` | `cyan` | Color of Go section |
 
 ### PHP (`php`)
 
@@ -303,11 +303,11 @@ PHP section is shown only in directories that contain `composer.json` file, or a
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_PHP_SHOW` | true | Show PHP section |
-| `SPACEFISH_PHP_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the PHP section |
-| `SPACEFISH_PHP_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the PHP section |
-| `SPACEFISH_PHP_SYMBOL` | `🐘·` | Character to be shown before PHP version |
-| `SPACEFISH_PHP_COLOR` | `blue` | Color of PHP section |
+| `GYARADOS_PHP_SHOW` | true | Show PHP section |
+| `GYARADOS_PHP_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the PHP section |
+| `GYARADOS_PHP_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the PHP section |
+| `GYARADOS_PHP_SYMBOL` | `🐘·` | Character to be shown before PHP version |
+| `GYARADOS_PHP_COLOR` | `blue` | Color of PHP section |
 
 ### Rust (`rust`)
 
@@ -315,12 +315,12 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_RUST_SHOW` | `true` | Show current Rust version |
-| `SPACEFISH_RUST_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Rust section |
-| `SPACEFISH_RUST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Rust section |
-| `SPACEFISH_RUST_SYMBOL` | `𝗥·` | Character to be shown before Rust version |
-| `SPACEFISH_RUST_COLOR` | `red` | Color of Rust section |
-| `SPACEFISH_RUST_VERBOSE_VERSION` | `false` | Show what branch is being used, if any. (Beta, Nightly) |
+| `GYARADOS_RUST_SHOW` | `true` | Show current Rust version |
+| `GYARADOS_RUST_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before the Rust section |
+| `GYARADOS_RUST_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the Rust section |
+| `GYARADOS_RUST_SYMBOL` | `𝗥·` | Character to be shown before Rust version |
+| `GYARADOS_RUST_COLOR` | `red` | Color of Rust section |
+| `GYARADOS_RUST_VERBOSE_VERSION` | `false` | Show what branch is being used, if any. (Beta, Nightly) |
 
 ### .NET (`dotnet`)
 
@@ -328,11 +328,11 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_DOTNET_SHOW` | `true` | Current .NET section |
-| `SPACEFISH_DOTNET_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before .NET section |
-| `SPACEFISH_DOTNET_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after .NET section |
-| `SPACEFISH_DOTNET_SYMBOL` | `.NET·` | Character to be shown before .NET version |
-| `SPACEFISH_DOTNET_COLOR` | `128` | Color of .NET section |
+| `GYARADOS_DOTNET_SHOW` | `true` | Current .NET section |
+| `GYARADOS_DOTNET_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before .NET section |
+| `GYARADOS_DOTNET_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after .NET section |
+| `GYARADOS_DOTNET_SYMBOL` | `.NET·` | Character to be shown before .NET version |
+| `GYARADOS_DOTNET_COLOR` | `128` | Color of .NET section |
 
 ### Kubectl context \(`kubecontext`\)
 
@@ -340,12 +340,12 @@ Kubernetes context is shown everywhere if `kubectl` binary is found.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_KUBECONTEXT_SHOW` | `true` | Show current kubectl context |
-| `SPACEFISH_KUBECONTEXT_NAMESPACE_SHOW` | `true` | Show current kubectl context namespace|
-| `SPACEFISH_KUBECONTEXT_PREFIX` | `at ` | Prefix before the kubectl section |
-| `SPACEFISH_KUBECONTEXT_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the kubectl section |
-| `SPACEFISH_KUBECONTEXT_SYMBOL` | `☸️ ` | Character to be shown before kubectl context |
-| `SPACEFISH_KUBECONTEXT_COLOR` | `cyan` | Color of kubectl section |
+| `GYARADOS_KUBECONTEXT_SHOW` | `true` | Show current kubectl context |
+| `GYARADOS_KUBECONTEXT_NAMESPACE_SHOW` | `true` | Show current kubectl context namespace|
+| `GYARADOS_KUBECONTEXT_PREFIX` | `at ` | Prefix before the kubectl section |
+| `GYARADOS_KUBECONTEXT_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the kubectl section |
+| `GYARADOS_KUBECONTEXT_SYMBOL` | `☸️ ` | Character to be shown before kubectl context |
+| `GYARADOS_KUBECONTEXT_COLOR` | `cyan` | Color of kubectl section |
 
 ### Exec Time \(`exec_time`\)
 
@@ -353,11 +353,11 @@ Execution time of the last command. Will be displayed if it exceeds the set thre
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_EXEC_TIME_SHOW` | `true` | Show execution time |
-| `SPACEFISH_EXEC_TIME_PREFIX` | `took·` |  Prefix before exec time section |
-| `SPACEFISH_EXEC_TIME_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after exec time section |
-| `SPACEFISH_EXEC_TIME_COLOR` | `yellow` | Color of exec time section |
-| `SPACEFISH_EXEC_TIME_ELAPSED` | `5` | The threshold in seconds for showing exec time section |
+| `GYARADOS_EXEC_TIME_SHOW` | `true` | Show execution time |
+| `GYARADOS_EXEC_TIME_PREFIX` | `took·` |  Prefix before exec time section |
+| `GYARADOS_EXEC_TIME_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after exec time section |
+| `GYARADOS_EXEC_TIME_COLOR` | `yellow` | Color of exec time section |
+| `GYARADOS_EXEC_TIME_ELAPSED` | `5` | The threshold in seconds for showing exec time section |
 
 ### Line Separator \(`line_sep`\)
 
@@ -365,21 +365,21 @@ This is where the prompt will split into two lines, if enabled.
 
 ### Battery \(`battery`\)
 
-By default, Battery section is shown only if battery level is below `SPACEFISH_BATTERY_THRESHOLD` \(default: 10%\).
+By default, Battery section is shown only if battery level is below `GYARADOS_BATTERY_THRESHOLD` \(default: 10%\).
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section \(`true`, `false`, `always` or `charged`\) |
-| `SPACEFISH_BATTERY_PREFIX` | ` ` | Prefix before battery section |
-| `SPACEFISH_BATTERY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
-| `SPACEFISH_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
-| `SPACEFISH_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
-| `SPACEFISH_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
-| `SPACEFISH_BATTERY_THRESHOLD` | 10 | Battery level below which battery section will be shown |
+| `GYARADOS_BATTERY_SHOW` | `true` | Show battery section \(`true`, `false`, `always` or `charged`\) |
+| `GYARADOS_BATTERY_PREFIX` | ` ` | Prefix before battery section |
+| `GYARADOS_BATTERY_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
+| `GYARADOS_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
+| `GYARADOS_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
+| `GYARADOS_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
+| `GYARADOS_BATTERY_THRESHOLD` | 10 | Battery level below which battery section will be shown |
 
-`SPACEFISH_BATTERY_SHOW` defines when to show battery section. Here are possible values:
+`GYARADOS_BATTERY_SHOW` defines when to show battery section. Here are possible values:
 
-| `SPACEFISH_BATTERY_SHOW` | Below threshold | Above threshold | Fully charged |
+| `GYARADOS_BATTERY_SHOW` | Below threshold | Above threshold | Fully charged |
 | :---: | :--- | :--- | :--- |
 | `false` | Hidden | Hidden | Hidden |
 | `always` | Shown | Shown | Shown |
@@ -392,14 +392,14 @@ This section shows mode indicator only when Vi-mode is enabled.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
-| `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
-| `SPACEFISH_VI_MODE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
-| `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
-| `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
-| `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
-| `SPACEFISH_VI_MODE_REPLACE_ONE` | `[R]` | Text to be shown when in replace_one mode |
-| `SPACEFISH_VI_MODE_COLOR` | `white` | Color of Vi-mode section |
+| `GYARADOS_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
+| `GYARADOS_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
+| `GYARADOS_VI_MODE_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `GYARADOS_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
+| `GYARADOS_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
+| `GYARADOS_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
+| `GYARADOS_VI_MODE_REPLACE_ONE` | `[R]` | Text to be shown when in replace_one mode |
+| `GYARADOS_VI_MODE_COLOR` | `white` | Color of Vi-mode section |
 
 ### Jobs \(`jobs`\)
 
@@ -407,32 +407,32 @@ This section only shows when there are backgrounded jobs.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_JOBS_SHOW` | `true` | Show background jobs indicator  |
-| `SPACEFISH_JOBS_PREFIX` | ` ` | Prefix before the jobs indicator |
-| `SPACEFISH_JOBS_SUFFIX` | ` ` | Suffix after the jobs indicator |
-| `SPACEFISH_JOBS_SYMBOL` | `✦` | Character to be shown when jobs are hiding |
-| `SPACEFISH_JOBS_COLOR` | `blue` | Color of background jobs section |
-| `SPACEFISH_JOBS_AMOUNT_PREFIX` | ` ` | Prefix before the number of jobs |
-| `SPACEFISH_JOBS_AMOUNT_SUFFIX` | ` ` | Suffix after the number of jobs |
-| `SPACEFISH_JOBS_AMOUNT_THRESHOLD` | `1` | Number of jobs after which job count will be shown |
+| `GYARADOS_JOBS_SHOW` | `true` | Show background jobs indicator  |
+| `GYARADOS_JOBS_PREFIX` | ` ` | Prefix before the jobs indicator |
+| `GYARADOS_JOBS_SUFFIX` | ` ` | Suffix after the jobs indicator |
+| `GYARADOS_JOBS_SYMBOL` | `✦` | Character to be shown when jobs are hiding |
+| `GYARADOS_JOBS_COLOR` | `blue` | Color of background jobs section |
+| `GYARADOS_JOBS_AMOUNT_PREFIX` | ` ` | Prefix before the number of jobs |
+| `GYARADOS_JOBS_AMOUNT_SUFFIX` | ` ` | Suffix after the number of jobs |
+| `GYARADOS_JOBS_AMOUNT_THRESHOLD` | `1` | Number of jobs after which job count will be shown |
 
 ### Exit Code \(`exit_code`\)
-Disabled by default. Set `SPACEFISH_EXIT_CODE_SHOW` to `true` to enable.
+Disabled by default. Set `GYARADOS_EXIT_CODE_SHOW` to `true` to enable.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_EXIT_CODE_SHOW` | `false` | Show the exit code of the previous command |
-| `SPACEFISH_EXIT_CODE_PREFIX` | ` ` | Prefix of exit code |
-| `SPACEFISH_EXIT_CODE_SUFFIX` | ` ` | Suffix of exit code |
-| `SPACEFISH_EXIT_CODE_SYMBOL` | `✘` | Symbol before the exit code, upon failure |
-| `SPACEFISH_EXIT_CODE_COLOR` | `red` | Color of exit code section |
+| `GYARADOS_EXIT_CODE_SHOW` | `false` | Show the exit code of the previous command |
+| `GYARADOS_EXIT_CODE_PREFIX` | ` ` | Prefix of exit code |
+| `GYARADOS_EXIT_CODE_SUFFIX` | ` ` | Suffix of exit code |
+| `GYARADOS_EXIT_CODE_SYMBOL` | `✘` | Symbol before the exit code, upon failure |
+| `GYARADOS_EXIT_CODE_COLOR` | `red` | Color of exit code section |
 
 ### Char  \(`char`\)
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
-| `SPACEFISH_CHAR_SUFFIX` | ` ` | Suffix after prompt character |
-| `SPACEFISH_CHAR_SYMBOL` | `➜` | Prompt character to be shown before any command |
-| `SPACEFISH_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
-| `SPACEFISH_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |
+| `GYARADOS_CHAR_PREFIX` | ` ` | Prefix before prompt character |
+| `GYARADOS_CHAR_SUFFIX` | ` ` | Suffix after prompt character |
+| `GYARADOS_CHAR_SYMBOL` | `➜` | Prompt character to be shown before any command |
+| `GYARADOS_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
+| `GYARADOS_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |

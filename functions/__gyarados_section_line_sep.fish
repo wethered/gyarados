@@ -1,19 +1,19 @@
-function fish_right_prompt
+#
+# Line separator
+#
 
+function __gyarados_section_line_sep -d "Separate the prompt into two lines"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------
 
-	__gyarados_util_set_default GYARADOS_RPROMPT_ORDER ""
+	__gyarados_util_set_default GYARADOS_PROMPT_SEPARATE_LINE true
 
 	# ------------------------------------------------------------------------------
-	# Sections
+	# Section
 	# ------------------------------------------------------------------------------
 
-	[ -n "$GYARADOS_RPROMPT_ORDER" ]; or return
-
-	for i in $GYARADOS_RPROMPT_ORDER
-		eval __gyarados_section_$i
+	if test "$GYARADOS_PROMPT_SEPARATE_LINE" = "true"
+		echo -e -n \n
 	end
-	set_color normal
 end
