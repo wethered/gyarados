@@ -17,7 +17,7 @@ function __gyarados_section_asciinema -d "Display whether asciinema is currently
 	# ------------------------------------------------------------------------------
 
 	[ $GYARADOS_ASCIINEMA_SHOW = false ]; and return
-	[ $GYARADOS_ASCIINEMA_RECORDING = false]; and return
+	[ $GYARADOS_ASCIINEMA_RECORDING = false ]; and return
 
 	__gyarados_lib_section \
 		$GYARADOS_ASCIINEMA_COLOR \
