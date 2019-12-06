@@ -10,6 +10,8 @@ function __gyarados_section_asciinema -d "Display whether asciinema is currently
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_SHOW true
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_COLOR "red"
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_SYMBOL "⊚ "
+	__gyarados_util_set_default GYARADOS_ASCIINEMA_PREFIX $GYARADOS_PROMPT_DEFAULT_PREFIX
+	__gyarados_util_set_default GYARADOS_ASCIINEMA_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -20,6 +22,8 @@ function __gyarados_section_asciinema -d "Display whether asciinema is currently
 	if test "$ASCIINEMA_REC" = "true"
 		__gyarados_lib_section \
 			$GYARADOS_ASCIINEMA_COLOR \
-			$GYARADOS_ASCIINEMA_SYMBOL
+			$GYARADOS_PROMPT_DEFAULT_PREFIX \
+			$GYARADOS_ASCIINEMA_SYMBOL \
+			$GYARADOS_ASCIINEMA_SUFFIX
 	end
 end
