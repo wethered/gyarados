@@ -3,5 +3,7 @@ function fish_greeting
   
   echo "Okay, let's go shopping!"
 
+  __gyarados_asciinema_record_next_session
+
   set_color normal
 end

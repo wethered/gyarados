@@ -11,6 +11,7 @@ function __gyarados_asciinema_record_next_session
 
 	if status is-interactive; and not set -q ASCIINEMA_REC; and test "$GYARADOS_SHOULD_RECORD" = "true"
 		set -g ASCIINEMA_REC 1
+		mkdir -p (cat ~/.config/kalima/project_home)/1_evidence
 		asciinema rec (cat ~/.config/kalima/project_home)/1_evidence/screenshot_(date +%F_%H-%M-%S).cast
 	else
 		set -e -g ASCIINEMA_REC
