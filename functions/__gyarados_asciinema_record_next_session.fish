@@ -14,8 +14,7 @@ function __gyarados_asciinema_record_next_session
 		mkdir -p (cat ~/.config/kalima/project_home)/1_evidence
 		asciinema rec (cat ~/.config/kalima/project_home)/1_evidence/screenshot_(date +%F_%H-%M-%S).cast
 	else
+		echo "[i] Disabling logging for new terminal sessions..."
 		set -e -g ASCIINEMA_REC
 	end
-
-	echo "I am properly running! Here is the recording status: $GYARADOS_SHOULD_RECORD"
 end
