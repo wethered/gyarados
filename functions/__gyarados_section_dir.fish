@@ -51,7 +51,7 @@ function __gyarados_section_dir -d "Display the current truncated directory"
 		set GYARADOS_DIR_SUFFIX "> "
 		set GYARADOS_DIR_TRUNC_REPO false
 		set GYARADOS_DIR_COLOR "white"
-		set dir (string replace -a "/" "\\" "$PWD" | cut -c2-)
+		set dir (string replace -a "/" "\\\\" "$PWD" | cut -c2-)
 		set -g DIRRRRR "$dir"
 	end
 
