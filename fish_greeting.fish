@@ -1,0 +1,1 @@
+echo "Okay, let's go shopping!"
