@@ -12,7 +12,7 @@ function __gyarados_section_asciinema -d "Display whether asciinema is currently
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_PREFIX ""
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
 	__gyarados_util_set_default GYARADOS_ASCIINEMA_SYMBOL "⊚"
-	__gyarados_util_set_default GYARADOS_ASCIINEMA_COLOR da291c
+	__gyarados_util_set_default GYARADOS_ASCIINEMA_COLOR b04b57
 
 	# ------------------------------------------------------------------------------
 	# Section

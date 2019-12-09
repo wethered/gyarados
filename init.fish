@@ -1,1 +1,1 @@
-echo "Okay, let's go shopping!"
+set HELLOWORLD "helloworld"
