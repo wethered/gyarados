@@ -11,7 +11,7 @@ function fish_prompt
 	__gyarados_util_set_default GYARADOS_PROMPT_FIRST_PREFIX_SHOW false
 	__gyarados_util_set_default GYARADOS_PROMPT_PREFIXES_SHOW true
 	__gyarados_util_set_default GYARADOS_PROMPT_SUFFIXES_SHOW true
-	__gyarados_util_set_default GYARADOS_PROMPT_DEFAULT_PREFIX "via "
+	__gyarados_util_set_default GYARADOS_PROMPT_DEFAULT_PREFIX " "
 	__gyarados_util_set_default GYARADOS_PROMPT_DEFAULT_SUFFIX " "
 	__gyarados_util_set_default GYARADOS_PROMPT_ORDER asciinema time user dir host git package node ruby golang php rust haskell julia elixir docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char
 

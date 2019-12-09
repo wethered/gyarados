@@ -40,9 +40,5 @@ function __gyarados_section_aws -d "Display the selected aws profile"
 		return
 	end
 
-	__gyarados_lib_section \
-		$GYARADOS_AWS_COLOR \
-		$GYARADOS_AWS_PREFIX \
-		"$GYARADOS_AWS_SYMBOL""$PROFILE_NAME" \
-		$GYARADOS_AWS_SUFFIX
+	__gyarados_lib_section $GYARADOS_AWS_COLOR $GYARADOS_AWS_PREFIX "$GYARADOS_AWS_SYMBOL""$PROFILE_NAME" $GYARADOS_AWS_SUFFIX
 end
