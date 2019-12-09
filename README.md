@@ -13,3 +13,7 @@
 omf install https://github.com/rTD-JP/gyarados
 omf theme gyarados
 ```
+
+## Options
+
+See the [documentation](https://github.com/rTD-JP/gyarados/blob/master/docs/Options.md) for options.
