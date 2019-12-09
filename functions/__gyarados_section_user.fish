@@ -17,7 +17,7 @@ function __gyarados_section_user -d "Display the username"
 	# --------------------------------------------------------------------------
 
 	__gyarados_util_set_default GYARADOS_USER_SHOW "always"
-	__gyarados_util_set_default GYARADOS_USER_PREFIX " "
+	__gyarados_util_set_default GYARADOS_USER_PREFIX ""
 	__gyarados_util_set_default GYARADOS_USER_SUFFIX ""
 	__gyarados_util_set_default GYARADOS_USER_COLOR yellow
 	__gyarados_util_set_default GYARADOS_USER_COLOR_ROOT red

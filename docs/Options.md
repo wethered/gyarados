@@ -49,8 +49,8 @@ This group of options defines a behavior of prompt and standard parameters for s
 | :------- | :-----: | ------- |
 | `GYARADOS_TIME_SHOW` | `true` | Show current time |
 | `GYARADOS_DATE_SHOW` | `true` | Show today's date |
-| `GYARADOS_TIME_PREFIX` | `at·` | Prefix before time section |
-| `GYARADOS_TIME_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after time section |
+| `GYARADOS_TIME_PREFIX` | `` | Prefix before time section |
+| `GYARADOS_TIME_SUFFIX` | `` | Suffix after time section |
 | `GYARADOS_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
 | `GYARADOS_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
 | `GYARADOS_TIME_COLOR` | `yellow` | Color of time section |
@@ -62,8 +62,8 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
 | `GYARADOS_USER_SHOW` | `always` | Show user section (`true`, `false`, `always` or `needed`) |
-| `GYARADOS_USER_PREFIX` | `with·` | Prefix before user section |
-| `GYARADOS_USER_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after user section |
+| `GYARADOS_USER_PREFIX` | `` | Prefix before user section |
+| `GYARADOS_USER_SUFFIX` | `` | Suffix after user section |
 | `GYARADOS_USER_COLOR` | `yellow` | Color of user section |
 | `GYARADOS_USER_COLOR_ROOT` | `red` | Color of user section when it's root |
 
@@ -88,7 +88,7 @@ Directory is always shown and truncated to the value of `GYARADOS_DIR_TRUNC`. Wh
 | `GYARADOS_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
 | `GYARADOS_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
 | `GYARADOS_DIR_COLOR` | `magenta` | Color of directory section |
-| `GYARADOS_DIR_PREFIX` | `in·` | Prefix before current directory |
+| `GYARADOS_DIR_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before current directory |
 | `GYARADOS_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
 | `GYARADOS_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
 | `GYARADOS_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
@@ -101,8 +101,8 @@ Hostname should only be shown while you are connected to another machine using S
 | :--- | :---: | --- |
 | `GYARADOS_HOST_SHOW` | `true` | Show host section (`true`, `false`, `always`) |
 | `GYARADOS_HOST_SHOW_FULL` | `false` | Show full hostname section (`true`, `false`) |
-| `GYARADOS_HOST_PREFIX` | `at·` | Prefix before the hostname |
-| `GYARADOS_HOST_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
+| `GYARADOS_HOST_PREFIX` | `@` | Prefix before the hostname |
+| `GYARADOS_HOST_SUFFIX` | `` | Suffix after the hostname |
 | `GYARADOS_HOST_COLOR` | `cyan` | Color of the hostname |
 | `GYARADOS_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
 
