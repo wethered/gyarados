@@ -9,3 +9,6 @@ if status is-interactive; and not set -q ASCIINEMA_REC; and test "$should_record
     set -gx ASCIINEMA_REC 1
     asciinema rec (cat ~/.config/kalima/project_home)/1_evidence/screenshot_(date +%F_%H-%M-%S).cast
 end
+
+echo "I am properly running! Here is the recording status:"
+echo $should_record
