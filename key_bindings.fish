@@ -9,9 +9,7 @@ else
 end
 
 if status is-interactive; and not set -q ASCIINEMA_REC; and test "$GYARADOS_SHOULD_RECORD" = "true"
-	set -g ASCIINEMA_REC 1
-	asciinema rec --append (cat ~/.config/kalima/project_home)/1_evidence/screenshot_(date +%F_%H-%M-%S).cast
+	asciinema rec (cat ~/.config/kalima/project_home)/1_evidence/screenshot_(date +%F_%H-%M-%S).cast
 else
-	echo "[i] Disabling logging for new terminal sessions..."
-	set -e -g ASCIINEMA_REC
+	set -e ASCIINEMA_REC
 end
