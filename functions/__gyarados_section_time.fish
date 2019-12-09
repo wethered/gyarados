@@ -35,6 +35,10 @@ function __gyarados_section_time -d "Display the current time!"
 		set time_str "$time_str"(date '+%H:%M:%S')
 	end
 
+	if test "$gyarados_undercover_mode" = "true"
+		set GYARADOS_TIME_COLOR "brblack"
+	end
+
 	__gyarados_lib_section \
 		$GYARADOS_TIME_COLOR \
 		$GYARADOS_TIME_PREFIX \

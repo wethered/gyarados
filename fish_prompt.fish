@@ -29,7 +29,7 @@ function fish_prompt
 	end
 
 	if test "$gyarados_undercover_mode" = "true"
-		set GYARADOS_PROMPT_ORDER exit_code asciinema dir
+		set GYARADOS_PROMPT_ORDER asciinema dir
 		set GYARADOS_RPROMPT_ORDER time
 		set GYARADOS_PROMPT_ADD_NEWLINE false
 	end
