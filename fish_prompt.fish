@@ -32,6 +32,7 @@ function fish_prompt
 		set GYARADOS_PROMPT_ORDER asciinema dir
 		set GYARADOS_RPROMPT_ORDER time
 		set GYARADOS_PROMPT_ADD_NEWLINE false
+		set GYARADOS_PROMPT_FIRST_PREFIX_SHOW true
 	end
 
 	if test "$GYARADOS_PROMPT_ADD_NEWLINE" = "true"
