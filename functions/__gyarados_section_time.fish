@@ -7,8 +7,8 @@ function __gyarados_section_time -d "Display the current time!"
 	# Configuration
 	# ------------------------------------------------------------------------------
 
-	__gyarados_util_set_default GYARADOS_TIME_SHOW false
-	__gyarados_util_set_default GYARADOS_DATE_SHOW false
+	__gyarados_util_set_default GYARADOS_TIME_SHOW true
+	__gyarados_util_set_default GYARADOS_DATE_SHOW true
 	__gyarados_util_set_default GYARADOS_TIME_PREFIX ""
 	__gyarados_util_set_default GYARADOS_TIME_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
 	__gyarados_util_set_default GYARADOS_TIME_FORMAT false
