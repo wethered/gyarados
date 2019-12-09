@@ -12,3 +12,7 @@
   end
 
   echo "I am properly running! Here is the recording status: $GYARADOS_SHOULD_RECORD"
+
+  echo $package
+
+  set -gx MYPACKAGE $package
