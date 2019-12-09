@@ -13,7 +13,7 @@ function __gyarados_section_host -d "Display the current hostname if connected o
 	__gyarados_util_set_default GYARADOS_HOST_SHOW "always"
 	__gyarados_util_set_default GYARADOS_HOST_PREFIX "at "
 	__gyarados_util_set_default GYARADOS_HOST_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
-	__gyarados_util_set_default GYARADOS_HOST_COLOR blue
+	__gyarados_util_set_default GYARADOS_HOST_COLOR cyan
 	__gyarados_util_set_default GYARADOS_HOST_COLOR_SSH green
 
 	# ------------------------------------------------------------------------------

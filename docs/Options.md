@@ -33,12 +33,22 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `GYARADOS_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
 | `GYARADOS_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
 
+### Asciinema \(`asciinema`\)
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `GYARADOS_ASCIINEMA_SHOW` | `true` | Show recording icon |
+| `GYARADOS_ASCIINEMA_PREFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Prefix before asciinema section |
+| `GYARADOS_ASCIINEMA_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after asciinema section |
+| `GYARADOS_ASCIINEMA_SYMBOL` | `⚉` | The symbol displayed when recording |
+| `GYARADOS_ASCIINEMA_COLOR` | `red` | Color of asciinema section |
+
 ### Time \(`time`\)
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `GYARADOS_TIME_SHOW` | `false` | Show current time |
-| `GYARADOS_DATE_SHOW` | `false·` | Show today's date |
+| `GYARADOS_TIME_SHOW` | `true` | Show current time |
+| `GYARADOS_DATE_SHOW` | `true` | Show today's date |
 | `GYARADOS_TIME_PREFIX` | `at·` | Prefix before time section |
 | `GYARADOS_TIME_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after time section |
 | `GYARADOS_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
@@ -51,7 +61,7 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `GYARADOS_USER_SHOW` | `true` | Show user section (`true`, `false`, `always` or `needed`) |
+| `GYARADOS_USER_SHOW` | `always` | Show user section (`true`, `false`, `always` or `needed`) |
 | `GYARADOS_USER_PREFIX` | `with·` | Prefix before user section |
 | `GYARADOS_USER_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after user section |
 | `GYARADOS_USER_COLOR` | `yellow` | Color of user section |
@@ -77,7 +87,7 @@ Directory is always shown and truncated to the value of `GYARADOS_DIR_TRUNC`. Wh
 | `GYARADOS_DIR_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
 | `GYARADOS_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
 | `GYARADOS_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
-| `GYARADOS_DIR_COLOR` | `cyan` | Color of directory section |
+| `GYARADOS_DIR_COLOR` | `magenta` | Color of directory section |
 | `GYARADOS_DIR_PREFIX` | `in·` | Prefix before current directory |
 | `GYARADOS_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
 | `GYARADOS_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
@@ -93,7 +103,7 @@ Hostname should only be shown while you are connected to another machine using S
 | `GYARADOS_HOST_SHOW_FULL` | `false` | Show full hostname section (`true`, `false`) |
 | `GYARADOS_HOST_PREFIX` | `at·` | Prefix before the hostname |
 | `GYARADOS_HOST_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
-| `GYARADOS_HOST_COLOR` | `blue` | Color of the hostname |
+| `GYARADOS_HOST_COLOR` | `cyan` | Color of the hostname |
 | `GYARADOS_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
 
 ### Git \(`git`\)

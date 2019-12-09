@@ -12,7 +12,7 @@ function __gyarados_section_dir -d "Display the current truncated directory"
 	__gyarados_util_set_default GYARADOS_DIR_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
 	__gyarados_util_set_default GYARADOS_DIR_TRUNC 3
 	__gyarados_util_set_default GYARADOS_DIR_TRUNC_REPO true
-	__gyarados_util_set_default GYARADOS_DIR_COLOR cyan
+	__gyarados_util_set_default GYARADOS_DIR_COLOR magenta
 
 	# Write Permissions lock symbol
 	__gyarados_util_set_default GYARADOS_DIR_LOCK_SHOW true
