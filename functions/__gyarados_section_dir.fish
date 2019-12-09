@@ -46,6 +46,13 @@ function __gyarados_section_dir -d "Display the current truncated directory"
 		set DIR_LOCK_SYMBOL (set_color $GYARADOS_DIR_LOCK_COLOR)" $GYARADOS_DIR_LOCK_SYMBOL"(set_color --bold)
 	end
 
+	if test "$gyarados_undercover_mode" = "true"
+		set GYARADOS_DIR_PREFIX "PS C:\\"
+		set GYARADOS_DIR_SUFFIX "> "
+		set GYARADOS_DIR_TRUNC_REPO false
+		set dir (string replace -a "/" "\\" "$PWD")
+	end
+
 	__gyarados_lib_section \
 		$GYARADOS_DIR_COLOR \
 		$GYARADOS_DIR_PREFIX \

@@ -22,6 +22,18 @@ function fish_prompt
 	# Keep track of whether the prompt has already been opened
 	set -g gyarados_prompt_opened $GYARADOS_PROMPT_FIRST_PREFIX_SHOW
 
+	if test -e ~/.face.undercover
+    	set -g gyarados_undercover_mode "true"
+    else
+    	set -g gyarados_undercover_mode "false"
+	end
+
+	if test "$gyarados_undercover_mode" = "true"
+		set GYARADOS_PROMPT_ORDER exit_code asciinema dir
+		set GYARADOS_RPROMPT_ORDER time
+		set GYARADOS_PROMPT_ADD_NEWLINE false
+	end
+
 	if test "$GYARADOS_PROMPT_ADD_NEWLINE" = "true"
 		echo
 	end
