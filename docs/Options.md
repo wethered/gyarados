@@ -50,7 +50,7 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `GYARADOS_TIME_SHOW` | `true` | Show current time |
 | `GYARADOS_DATE_SHOW` | `true` | Show today's date |
 | `GYARADOS_TIME_PREFIX` | `` | Prefix before time section |
-| `GYARADOS_TIME_SUFFIX` | `` | Suffix after time section |
+| `GYARADOS_TIME_SUFFIX` | `$GYARADOS_PROMPT_DEFAULT_PREFIX` | Suffix after time section |
 | `GYARADOS_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
 | `GYARADOS_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
 | `GYARADOS_TIME_COLOR` | `yellow` | Color of time section |
