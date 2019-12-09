@@ -8,7 +8,7 @@ function __gyarados_section_dir -d "Display the current truncated directory"
 	# ------------------------------------------------------------------------------
 
 	__gyarados_util_set_default GYARADOS_DIR_SHOW true
-	__gyarados_util_set_default GYARADOS_DIR_PREFIX "in "
+	__gyarados_util_set_default GYARADOS_DIR_PREFIX $GYARADOS_PROMPT_DEFAULT_PREFIX
 	__gyarados_util_set_default GYARADOS_DIR_SUFFIX $GYARADOS_PROMPT_DEFAULT_SUFFIX
 	__gyarados_util_set_default GYARADOS_DIR_TRUNC 3
 	__gyarados_util_set_default GYARADOS_DIR_TRUNC_REPO true
